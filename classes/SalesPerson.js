@@ -1,20 +1,22 @@
-const { Employee } = require("./classes/Employee")
+const { Employee } = require("./Employee");
 
-class SalesPerson extends Employee{
-    #totalSales = 0
-    constructor(name, position, salary, isHired,clients, totalSales){
-        super(name, position, salary, isHired);
-        this.clients = clients;
-        this.#totalSales = totalSales;
-    }
-    getSalesNumbers(){
-        return this.#totalSales;ß
-    }
-    makeSale(amount){
-        this.#totalSales += amount;
-    }    
+class SalesPerson extends Employee {
+  #totalSales = 0;
+
+  constructor(name, position, salary, productsSold) {
+    super(name, position, salary);
+    this.productsSold = productsSold;
+  }
+
+  makeSale(amount) {
+    this.#totalSales += amount;
+  }
+
+  getSalesNumber() {
+    return this.#totalSales;
+  }
 }
 
 module.exports = {
-    SalesPerson,
-}
+  SalesPerson,
+};

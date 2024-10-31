@@ -32,7 +32,9 @@ class Employee {
   }
 
   static getTotalPayroll() {
-    return Employee.#allEmployees;
+    return Employee.#allEmployees.reduce((total, employee) => {
+      return total + employee.#salary;
+    }, 0);
   }
 }
 
